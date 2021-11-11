@@ -48,10 +48,14 @@ with mp_face_detection. FaceDetection(
                     if result[1] < 150:
                         if LABELS[result[0]] == "With_mask":
                             color = (0, 255, 0)
-                            my_serial.write("P")
+                            #my_serial.write('1')
+                            my_serial.write(str.encode('1'))
+                            time.sleep(1.0)
                         elif LABELS[result[0]] == "Without_mask":
                             color = (0, 0, 255)
-                            my_serial.write("S")
+                           # my_serial.write('0')
+                            my_serial.write(str.encode('0'))
+                            time.sleep(1.0)
                        # else:
 
                         cv2. putText(frame, "{}" . format(
